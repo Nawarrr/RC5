@@ -35,25 +35,25 @@
 
 
 KEY EXP:
-	ldi xl , low(So)  ; Loading address of So in X
-	ldi xh , high(So) 
+	ldi Zl , low(So)  ; Loading address of So in Z
+	ldi Zh , high(So) 
 	ldi r16 , low(0xB7E1) ; loading Pw in r17 r16 
 	ldi r17 , high(0xB7E1)
-	st  x+  , r16    ; Storing Pw as So 
-	st  x+  , r17
+	st  Z  , r16    ; Storing Pw as So 
+	st  Z+1  , r17
 	ldi r18, low(0x9E37)	; Qw in Registers  r19 r18 
 	ldi r19, high(0x9E37)	
-	ldi r20 , 54        ; number of iterations
+	ldi r20 , 16        ; number of iterations
 	LOOP :
-		ld r16 , x-2 ; loading S[i-1] in r17  r16
-		ld r17 , x-1
+		ld r16 , Z+ ; loading S[i-1] in r17  r16
+		ld r17 , Z+
 		ADD r16 , r18 ; adding S[i-1] to Qw
-		ADC r17 , r19 
-		st x+ , r16 ; Storing in the next location
-		st x+ , r17 
+		ADC r17  , r19 
+		st x , r16 ; Storing in the next location
+		st x+1 , r17 
 		dec r20
 		brne LOOP
-		re
+		
 
 
 
@@ -78,3 +78,16 @@ RORL:
 		DEC R22
 		BRNE RORL LOOP
 
+MOD :
+	CLR c
+	INC R16
+	CPI R16 , 18
+	BREQ EQUAL
+	BRCC BIGGER 
+	RET
+
+	EQUAL:
+		LDI R16 , 0
+		
+	BIGGER:
+		SUBI R16, 18
