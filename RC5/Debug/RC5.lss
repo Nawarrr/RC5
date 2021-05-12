@@ -1,0 +1,12 @@
+
+AVRASM ver. 2.2.8  C:\Users\Nawar\Desktop\RC5\RC5\main.asm Wed May 12 02:15:05 2021
+
+[builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\avrasm\inc\m328Pdef.inc'
+C:\Users\Nawar\Desktop\RC5\RC5\main.asm(37): error: KEY: Unknown instruction or macro
+C:\Users\Nawar\Desktop\RC5\RC5\main.asm(56): error: re: Unknown instruction or macro
+C:\Users\Nawar\Desktop\RC5\RC5\main.asm(62): error: ROTL: Unknown instruction or macro
+C:\Users\Nawar\Desktop\RC5\RC5\main.asm(62): error: Duplicate label: 'LOOP'
+C:\Users\Nawar\Desktop\RC5\RC5\main.asm(68): error: LOOP: Unknown instruction or macro
+C:\Users\Nawar\Desktop\RC5\RC5\main.asm(73): error: RORL: Unknown instruction or macro
+C:\Users\Nawar\Desktop\RC5\RC5\main.asm(73): error: Duplicate label: 'LOOP'
+C:\Users\Nawar\Desktop\RC5\RC5\main.asm(79): error: LOOP: Unknown instruction or macro
